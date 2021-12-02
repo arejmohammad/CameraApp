@@ -62,8 +62,8 @@
 		822953692758DB680015AC8C /* CameraApp */ = {
 			isa = PBXGroup;
 			children = (
-				822953822758E5810015AC8C /* Other Files */,
 				822953812758E5780015AC8C /* Controllers */,
+				822953822758E5810015AC8C /* Other Files */,
 				822953782758DB690015AC8C /* LaunchScreen.storyboard */,
 				8229537B2758DB690015AC8C /* Info.plist */,
 			);
