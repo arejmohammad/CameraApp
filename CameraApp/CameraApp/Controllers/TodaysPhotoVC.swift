@@ -7,6 +7,7 @@ class TodaysPhotoVC: UIViewController {
     let label = UILabel()
     let imageView = UIImageView()
     let button = UIButton()
+    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class TodaysPhotoVC: UIViewController {
     @objc func OpenCamera() {
         print("Camera Opend :)")
     }
+    
 
 
 }

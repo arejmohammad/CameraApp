@@ -9,27 +9,33 @@
 /* Begin PBXBuildFile section */
 		8229536B2758DB680015AC8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229536A2758DB680015AC8C /* AppDelegate.swift */; };
 		8229536D2758DB680015AC8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229536C2758DB680015AC8C /* SceneDelegate.swift */; };
-		8229536F2758DB680015AC8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229536E2758DB680015AC8C /* ViewController.swift */; };
+		8229536F2758DB680015AC8C /* LaunshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229536E2758DB680015AC8C /* LaunshViewController.swift */; };
 		822953752758DB680015AC8C /* CameraApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 822953732758DB680015AC8C /* CameraApp.xcdatamodeld */; };
 		822953772758DB690015AC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822953762758DB690015AC8C /* Assets.xcassets */; };
-		8229537A2758DB690015AC8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822953782758DB690015AC8C /* LaunchScreen.storyboard */; };
 		822953842758E5FB0015AC8C /* TodaysPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822953832758E5FB0015AC8C /* TodaysPhotoVC.swift */; };
 		822953862758E6330015AC8C /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822953852758E6330015AC8C /* CameraVC.swift */; };
 		822953882758E65C0015AC8C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822953872758E65C0015AC8C /* LoginVC.swift */; };
+		82A581F02759290900E7BE36 /* camanim.json in Resources */ = {isa = PBXBuildFile; fileRef = 82A581EF2759290900E7BE36 /* camanim.json */; };
+		82A581F82759377F00E7BE36 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 82A581F72759377F00E7BE36 /* Lottie */; };
+		82A581FA275956D000E7BE36 /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A581F9275956D000E7BE36 /* signUp.swift */; };
+		82A581FC2759587A00E7BE36 /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 82A581FB2759587A00E7BE36 /* camera.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		822953672758DB680015AC8C /* CameraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8229536A2758DB680015AC8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8229536C2758DB680015AC8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8229536E2758DB680015AC8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8229536E2758DB680015AC8C /* LaunshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunshViewController.swift; sourceTree = "<group>"; };
 		822953742758DB680015AC8C /* CameraApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CameraApp.xcdatamodel; sourceTree = "<group>"; };
 		822953762758DB690015AC8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		822953792758DB690015AC8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8229537B2758DB690015AC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822953832758E5FB0015AC8C /* TodaysPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysPhotoVC.swift; sourceTree = "<group>"; };
 		822953852758E6330015AC8C /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		822953872758E65C0015AC8C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		82A581EF2759290900E7BE36 /* camanim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camanim.json; sourceTree = "<group>"; };
+		82A581F42759305F00E7BE36 /* lottie-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "lottie-ios"; path = "../../../../Desktop/repo/lottie-ios"; sourceTree = "<group>"; };
+		82A581F9275956D000E7BE36 /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
+		82A581FB2759587A00E7BE36 /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A581F82759377F00E7BE36 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,9 +69,11 @@
 		822953692758DB680015AC8C /* CameraApp */ = {
 			isa = PBXGroup;
 			children = (
+				82A581F32759305F00E7BE36 /* Packages */,
 				822953812758E5780015AC8C /* Controllers */,
 				822953822758E5810015AC8C /* Other Files */,
-				822953782758DB690015AC8C /* LaunchScreen.storyboard */,
+				82A581EF2759290900E7BE36 /* camanim.json */,
+				82A581FB2759587A00E7BE36 /* camera.json */,
 				8229537B2758DB690015AC8C /* Info.plist */,
 			);
 			path = CameraApp;
@@ -73,8 +82,9 @@
 		822953812758E5780015AC8C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8229536E2758DB680015AC8C /* ViewController.swift */,
+				8229536E2758DB680015AC8C /* LaunshViewController.swift */,
 				822953872758E65C0015AC8C /* LoginVC.swift */,
+				82A581F9275956D000E7BE36 /* signUp.swift */,
 				822953832758E5FB0015AC8C /* TodaysPhotoVC.swift */,
 				822953852758E6330015AC8C /* CameraVC.swift */,
 			);
@@ -90,6 +100,15 @@
 				822953732758DB680015AC8C /* CameraApp.xcdatamodeld */,
 			);
 			path = "Other Files";
+			sourceTree = "<group>";
+		};
+		82A581F32759305F00E7BE36 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				82A581F42759305F00E7BE36 /* lottie-ios */,
+			);
+			name = Packages;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +127,9 @@
 			dependencies = (
 			);
 			name = CameraApp;
+			packageProductDependencies = (
+				82A581F72759377F00E7BE36 /* Lottie */,
+			);
 			productName = CameraApp;
 			productReference = 822953672758DB680015AC8C /* CameraApp.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +158,9 @@
 				Base,
 			);
 			mainGroup = 8229535E2758DB670015AC8C;
+			packageReferences = (
+				82A581F62759377F00E7BE36 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 822953682758DB680015AC8C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,7 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8229537A2758DB690015AC8C /* LaunchScreen.storyboard in Resources */,
+				82A581F02759290900E7BE36 /* camanim.json in Resources */,
+				82A581FC2759587A00E7BE36 /* camera.json in Resources */,
 				822953772758DB690015AC8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,25 +191,15 @@
 				822953752758DB680015AC8C /* CameraApp.xcdatamodeld in Sources */,
 				822953862758E6330015AC8C /* CameraVC.swift in Sources */,
 				822953882758E65C0015AC8C /* LoginVC.swift in Sources */,
-				8229536F2758DB680015AC8C /* ViewController.swift in Sources */,
+				8229536F2758DB680015AC8C /* LaunshViewController.swift in Sources */,
 				8229536B2758DB680015AC8C /* AppDelegate.swift in Sources */,
+				82A581FA275956D000E7BE36 /* signUp.swift in Sources */,
 				822953842758E5FB0015AC8C /* TodaysPhotoVC.swift in Sources */,
 				8229536D2758DB680015AC8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		822953782758DB690015AC8C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				822953792758DB690015AC8C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8229537C2758DB690015AC8C /* Debug */ = {
@@ -376,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82A581F62759377F00E7BE36 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arejmohammad/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82A581F72759377F00E7BE36 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82A581F62759377F00E7BE36 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		822953732758DB680015AC8C /* CameraApp.xcdatamodeld */ = {

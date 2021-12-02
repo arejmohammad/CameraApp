@@ -7,7 +7,7 @@ class LoginVC: UIViewController {
     let welcome = UILabel(frame: CGRect(x: 45, y: 100, width: 300, height: 50))
     let Image = UIImageView(frame: CGRect(x: 70, y: 150, width: 250, height: 250))
     let nameL = UILabel(frame: CGRect(x: 70, y: 400, width: 250, height: 50))
-    let name = UITextField(frame: CGRect(x: 70, y: 450, width: 270, height: 40))
+    var name = UITextField(frame: CGRect(x: 70, y: 450, width: 270, height: 40))
     let passL = UILabel(frame: CGRect(x: 70, y: 500, width: 250, height: 50))
     let password = UITextField(frame: CGRect(x: 70, y: 550, width: 270, height: 40))
     let login = UIButton (frame: CGRect(x: 70, y: 620, width: 250, height: 40))
@@ -37,8 +37,7 @@ class LoginVC: UIViewController {
         login.setTitle("login", for: .normal)
         login.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         login.layer.cornerRadius = login.frame.height/2
-
-        login.addTarget(self, action: #selector (moveToNextVC) , for: .touchDown)
+        login.addTarget(self, action: #selector (Login) , for: .touchDown)
         
         
         welcome.text = "Welcome to Camera App"
@@ -75,10 +74,12 @@ class LoginVC: UIViewController {
         
     }
     
-    @objc  func moveToNextVC(){
+    @objc  func Login(){
         let vc = TodaysPhotoVC()
-        //        vc.label2.text = "Hello \(name.text!)"
+        vc.label.text = "Hello \(name.text)"
         self.present(vc, animated: true, completion: nil)
+//        vc.presentationController?.shouldPresentInFullscreen
+        
     }
     
     
