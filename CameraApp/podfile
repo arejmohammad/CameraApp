@@ -1,4 +1,0 @@
-Platform :iOS, '15.0'
-Target 'CameraApp' do
-Pod 'Lottie-ios'
-end

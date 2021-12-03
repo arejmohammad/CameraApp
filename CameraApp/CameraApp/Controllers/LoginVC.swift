@@ -59,7 +59,7 @@ class LoginVC: UIViewController {
         signUpBut.setTitle("SignUp", for: .normal)
         signUpBut.titleLabel?.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         signUpBut.titleLabel?.font = .systemFont(ofSize: 12)
-       
+        signUpBut.addTarget(self, action: #selector (signUp) , for: .touchDown)
         
         
         view.addSubview(welcome)
@@ -78,15 +78,17 @@ class LoginVC: UIViewController {
         let vc = TodaysPhotoVC()
         vc.label.text = "Hello \(name.text)"
         self.present(vc, animated: true, completion: nil)
-//        vc.presentationController?.shouldPresentInFullscreen
+        //        vc.presentationController?.shouldPresentInFullscreen
+    }
+    @objc  func signUp(){
+        let vc2 = SignUp()
+        self.present(vc2, animated: true, completion: nil)
         
     }
-    
-    
-}
-extension UITextField {
-    func clear(){
-        self.text = ""
-    }
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(true);
+       navigationController?.navigationBar.isHidden = true // for navigation bar hide
+        UIApplication.shared.isStatusBarHidden = true; // for status bar hide
+   }
 }
 

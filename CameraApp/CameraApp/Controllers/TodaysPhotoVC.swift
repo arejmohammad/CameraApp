@@ -3,11 +3,16 @@ import UIKit
 
 class TodaysPhotoVC: UIViewController {
     
+    //if collectionView is Empty
     let stackView = UIStackView()
-    let label = UILabel()
-    let imageView = UIImageView()
     let button = UIButton()
-    var name = ""
+    let label = UILabel()
+    
+    //if CollectionView not empty and  has items in it.
+    let vc = MyCollectionViewController()
+    let image = UIImageView()
+    let desc = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +39,11 @@ class TodaysPhotoVC: UIViewController {
         label.textAlignment = .center
         
         //ImageView
-        stackView.addSubview(imageView)
-        imageView.image = UIImage(named: "placeholder2")
-        imageView.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height-height/2.5)
-        incrementYPoint += imageView.frame.height + 40.0
-        imageView.contentMode = .scaleAspectFit
+        stackView.addSubview(image)
+        vc.image.image = UIImage(named: "placeholder2")
+        image.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height-height/2.5)
+        incrementYPoint += image.frame.height + 40.0
+        image.contentMode = .scaleAspectFit
         
         //Button
         stackView.addSubview(button)
@@ -52,16 +57,51 @@ class TodaysPhotoVC: UIViewController {
         incrementYPoint += button.frame.height + 40.0
         button.layer.cornerRadius = button.frame.height/2
         
-        
         view.backgroundColor = .white
-
     }
+
+}
+
+
+
+extension TodaysPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @objc func OpenCamera() {
-        print("Camera Opend :)")
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+        
+//        let picker = UIImagePickerController()
+//        picker.allowsEditing = true
+//        picker.delegate = self
+//        present(picker, animated: true)
+//
+//        print("Camera Opend..")
+    }
+
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+
+        let imageName = UUID().uuidString
+        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+
+        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+            try? jpegData.write(to: imagePath)
+        }
+        
+        let singleMemoryItem = SingleMemoryItem(image: image, desc: "")
+        vc.arrOfItems.append(singleMemoryItem)
+        
+        dismiss(animated: true)
+    }
+
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
-
-
 }
