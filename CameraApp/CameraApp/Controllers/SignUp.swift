@@ -1,84 +1,226 @@
 
 import UIKit
 
+
+//let defaults = UserDefaults.standard
+
 class SignUp: UIViewController {
-
-    let emailL = UILabel(frame: CGRect(x: 70, y: 50, width: 300, height: 50))
-    let usenameL = UILabel(frame: CGRect(x: 70, y: 150, width: 300, height: 50))
-    let passwordL = UILabel(frame: CGRect(x: 70, y: 250, width: 300, height: 50))
-    let confirmPasswordL = UILabel(frame: CGRect(x: 70, y: 350, width: 300, height: 50))
-
-    var emailT = UITextField(frame: CGRect(x: 70, y: 100, width: 270, height: 40))
-    var nameT = UITextField(frame: CGRect(x: 70, y: 200, width: 270, height: 40))
-    let passwordT = UITextField(frame: CGRect(x: 70, y: 300, width: 270, height: 40))
-    let confirmPasswordT = UITextField(frame: CGRect(x: 70, y: 400, width: 270, height: 40))
     
-    let check1 = UIButton (frame: CGRect(x: 20, y: 470, width: 20, height: 20))
-    let label1 = UILabel(frame: CGRect(x: 50, y: 470, width: 300, height: 60))
-
+    let stackView = UIStackView()
     
+    let titleL = UILabel()
+    let usenameL = UILabel()
+    let passwordL = UILabel()
+    let confirmPasswordL = UILabel()
+    
+    var nameT = UITextField()
+    let passwordT = UITextField()
+    let confirmPasswordT = UITextField()
+    
+    let check1 = UIButton()
+    let label1 = UILabel()
+    
+    let stackView2 = UIStackView()
+    let SignUpBtn = UIButton()
+    let CancelBtn = UIButton()
+    
+    var checkButtonState = false
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        emailL.text = "Enter your Email :"
-        emailL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        usenameL.text = "Enter your username :"
+        let width = view.frame.width-60
+        let height = view.frame.height-180
+        var incrementYPoint = 30.0
+        
+        
+        //Hide Keyboard
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        
+        //StackView
+        stackView.axis = .vertical
+        stackView.frame = CGRect(x: 30, y: 80, width: width, height: height)
+        
+        
+        //Title
+        titleL.text = "New SignUp"
+        titleL.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
+        incrementYPoint += titleL.frame.height
+        incrementYPoint += 100
+        titleL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        titleL.font = UIFont.systemFont(ofSize: 26)
+        
+        
+        //UserName
+        usenameL.text = "Your Name"
         usenameL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        usenameL.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        incrementYPoint += usenameL.frame.height
+        usenameL.font = UIFont.systemFont(ofSize: 16)
         
-        passwordL.text = "Enter your password :"
-        passwordL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        
-        confirmPasswordL.text = "confirm your password :"
-        confirmPasswordL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        
-        emailT.backgroundColor = .white
-        emailT.layer.cornerRadius = 10
-        emailT.borderStyle = .roundedRect
-
-        
-        nameT.backgroundColor = .white
-        nameT.layer.cornerRadius = 10
         nameT.borderStyle = .roundedRect
-
+        nameT.placeholder = "Your Name"
+        nameT.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        incrementYPoint += nameT.frame.height
+        incrementYPoint += 20
         
-        passwordT.backgroundColor = .white
-        passwordT.layer.cornerRadius = 10
+        
+        //Password
+        passwordL.text = "Your Password"
+        passwordL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        passwordL.font = UIFont.systemFont(ofSize: 16)
+        passwordL.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        incrementYPoint += passwordL.frame.height
+        
         passwordT.borderStyle = .roundedRect
-
+        passwordT.placeholder = "Password"
+        passwordT.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        passwordT.isSecureTextEntry = true
+        incrementYPoint += passwordT.frame.height
+        incrementYPoint += 20
         
-        confirmPasswordT.backgroundColor = .white
-        confirmPasswordT.layer.cornerRadius = 10
+        //Confirm Password
+        confirmPasswordL.text = "Re-Enter Your Password"
+        confirmPasswordL.font = UIFont.systemFont(ofSize: 16)
+        confirmPasswordL.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        confirmPasswordL.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        incrementYPoint += confirmPasswordL.frame.height
+        
         confirmPasswordT.borderStyle = .roundedRect
-
-        check1.setImage(UIImage(named: "squareshape"), for: .normal)
+        confirmPasswordT.placeholder = "Password"
+        confirmPasswordT.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        confirmPasswordT.isSecureTextEntry = true
+        incrementYPoint += confirmPasswordT.frame.height
+        incrementYPoint += 100
+        
+        
+        //Agree Check
+        check1.setImage(UIImage(systemName: "squareshape"), for: .normal)
+        check1.frame = CGRect(x: 0, y: incrementYPoint+5, width: 30, height: 30)
         check1.addTarget(self, action: #selector (checking), for: .touchDown)
         check1.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
-        label1.text = "I agree to MemorieApp Terms of service and Privacy policy"
+        label1.text = "I agree to Moments App Terms of service and Privacy policy."
+        label1.numberOfLines = 2
+        label1.frame = CGRect(x: check1.frame.width+5.0, y: incrementYPoint, width: width-check1.frame.width-5, height: height/20)
+        incrementYPoint += label1.frame.height
+        incrementYPoint += 20
         label1.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         label1.font = .systemFont(ofSize: 13)
-
         
-        view.addSubview(emailL)
-        view.addSubview(usenameL)
-        view.addSubview(passwordL)
-        view.addSubview(confirmPasswordL)
-        view.addSubview(emailT)
-        view.addSubview(nameT)
-        view.addSubview(passwordT)
-        view.addSubview(confirmPasswordT)
-        view.addSubview(check1)
-        view.addSubview(label1)
-
-
-    }
-    @objc func checking(){
-        check1.setImage(UIImage(named: "checkmark.square.fill"), for: .normal)
+        
+        //StackView2
+        stackView2.axis = .horizontal
+        stackView2.distribution = .fillEqually
+        stackView2.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/20)
+        
+        
+        //SignUp Butn
+        SignUpBtn.backgroundColor = .black
+        SignUpBtn.setTitle("SignUp", for: .normal)
+        SignUpBtn.addTarget(self, action: #selector(SignUpButtonTapped), for: .touchDown)
+        SignUpBtn.titleLabel?.textColor = .white
+        SignUpBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        SignUpBtn.titleLabel?.textAlignment = .center
+        SignUpBtn.frame = CGRect(x: 10, y: 0 ,width: width/2-10, height: height/16)
+        SignUpBtn.layer.cornerRadius = SignUpBtn.frame.height/2
+        
+        
+        //Canel Butn
+        CancelBtn.backgroundColor = .black
+        CancelBtn.setTitle("Cancel", for: .normal)
+        CancelBtn.addTarget(self, action: #selector(Cancel), for: .touchDown)
+        CancelBtn.titleLabel?.textColor = .white
+        CancelBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        CancelBtn.titleLabel?.textAlignment = .center
+        CancelBtn.frame = CGRect(x: SignUpBtn.frame.width+20.0, y: 0 ,width: width/2-20, height: height/16)
+        CancelBtn.layer.cornerRadius = SignUpBtn.frame.height/2
+        
+        
+        //Adding SubViews
+        view.addSubview(stackView)
+        stackView.addSubview(titleL)
+        stackView.addSubview(usenameL)
+        stackView.addSubview(passwordL)
+        stackView.addSubview(confirmPasswordL)
+        stackView.addSubview(nameT)
+        stackView.addSubview(passwordT)
+        stackView.addSubview(confirmPasswordT)
+        stackView.addSubview(check1)
+        stackView.addSubview(label1)
+        stackView.addSubview(stackView2)
+        stackView2.addSubview(SignUpBtn)
+        stackView2.addSubview(CancelBtn)
+        
         
     }
     
     
+    @objc func checking() {
+
+        if checkButtonState {
+            check1.setImage(UIImage(systemName: "squareshape"), for: .normal)
+            checkButtonState = false
+        } else {
+            check1.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            checkButtonState = true
+        }
+    }
     
+    @objc func SignUpButtonTapped() {
+        let vc = LoginVC()
+        if !nameT.text!.isEmpty && !passwordT.text!.isEmpty {
+            
+            if passwordT.text == confirmPasswordT.text {
+                
+                if checkButtonState {
+                    
+                    UserDefaults.standard.set(nameT.text, forKey: "name")
+                    UserDefaults.standard.set(passwordT.text, forKey: "password") // save user pass and name in userdefaults ;).
+                    vc.modalPresentationStyle = .fullScreen
+                    present(vc, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    let dialogMessage = UIAlertController(title: "Ops!", message: "You should agree term of services and privacy to sign up!", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                        print("Ok to checkBtn")
+                     })
+                    dialogMessage.addAction(ok)
+                    self.present(dialogMessage, animated: true, completion: nil)
+                }
+                
+            } else {
+
+                let dialogMessage = UIAlertController(title: "Ops!", message: "Your password and passweord confirmation doesn't match!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    print("Ok to match pass with confirmation")
+                 })
+                dialogMessage.addAction(ok)
+                self.present(dialogMessage, animated: true, completion: nil)
+            }
+            
+        } else {
+
+            let dialogMessage = UIAlertController(title: "Ops!", message: "Your name and password shouldn't be Empty!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok to name or pass not empty")
+             })
+            dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func Cancel() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
 }

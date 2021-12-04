@@ -1,107 +1,168 @@
 
 import UIKit
 
-class TodaysPhotoVC: UIViewController {
+class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //if collectionView is Empty
     let stackView = UIStackView()
-    let button = UIButton()
-    let label = UILabel()
+    var name = UILabel()
+    var label1 = UILabel()
+    let label2 = UILabel()
+    let label3 = UILabel()
+    let stackView2 = UIStackView()
+    let cameraBtn = UIButton()
+    let albumBtn = UIButton()
+    let signOut = UIButton()
+    
     
     //if CollectionView not empty and  has items in it.
     let vc = MyCollectionViewController()
-    let image = UIImageView()
-    let desc = UILabel()
+    let image = UIImageView() //img
+    let desc = UILabel() //caption
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let width = view.frame.width-40
-        let height = view.frame.height-40
-        var incrementYPoint = 60.0
-        
-        //Stack View
-        view.addSubview(stackView)
-        stackView.frame = CGRect(x: 20, y: 20, width: width, height: height)
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        
-        
-        //Label
-        stackView.addSubview(label)
-        label.text = "Hello User Name"
-        
-        label.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/8)
-        incrementYPoint += label.frame.height + 40.0
-        label.font = UIFont.systemFont(ofSize: 26)
-        label.textColor = .black
-        label.textAlignment = .center
-        
-        //ImageView
-        stackView.addSubview(image)
-        vc.image.image = UIImage(named: "placeholder2")
-        image.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height-height/2.5)
-        incrementYPoint += image.frame.height + 40.0
-        image.contentMode = .scaleAspectFit
-        
-        //Button
-        stackView.addSubview(button)
-        button.backgroundColor = .black
-        button.setTitle("Take Picture!", for: .normal)
-        button.addTarget(self, action: #selector(OpenCamera), for: .touchDown)
-        button.titleLabel?.textColor = .white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
-        button.titleLabel?.textAlignment = .center
-        button.frame = CGRect(x: 0, y: incrementYPoint ,width: width, height: height/16)
-        incrementYPoint += button.frame.height + 40.0
-        button.layer.cornerRadius = button.frame.height/2
+        let width = view.frame.width-60
+        let height = view.frame.height-250
+        var incrementYPoint = 20.0
         
         view.backgroundColor = .white
+        
+        //Stack View
+        stackView.frame = CGRect(x: 30, y: 80, width: width, height: height)
+        stackView.axis = .vertical
+        
+        //Label1
+//        label1.text = "Hello \(String(describing: name.text))"
+        label1.text = "Hello"
+        label1.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
+        incrementYPoint += label1.frame.height
+        label1.font = UIFont.systemFont(ofSize: 26)
+        label1.textColor = .black
+        
+        
+        //Label2
+        label2.text = "No Moments yet :'(, click on the button below to start"
+        label2.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
+        incrementYPoint += label2.frame.height
+        label2.font = UIFont.systemFont(ofSize: 16)
+        label2.numberOfLines = 2
+        label2.textColor = .black
+        
+        
+        //ImageView
+        image.image = UIImage(named: "empty")
+        image.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height-height/2.5)
+        incrementYPoint += image.frame.height
+        incrementYPoint += 30
+        image.contentMode = .scaleAspectFit
+        
+        //Label3
+        label3.text = "Let's Do it!"
+        label3.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
+        incrementYPoint += label2.frame.height
+        label3.font = UIFont.systemFont(ofSize: 16)
+        label3.textColor = .black
+        
+        
+        //StackView2
+        stackView2.axis = .horizontal
+        stackView2.distribution = .fillEqually
+        stackView2.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/16)
+        
+        //Camera Button
+        cameraBtn.backgroundColor = .black
+        cameraBtn.setTitle("Camera", for: .normal)
+        cameraBtn.addTarget(self, action: #selector(OpenCamera), for: .touchDown)
+        cameraBtn.titleLabel?.textColor = .white
+        cameraBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        cameraBtn.titleLabel?.textAlignment = .center
+        cameraBtn.frame = CGRect(x: 10, y: 0 ,width: width/2-10, height: height/16)
+        cameraBtn.layer.cornerRadius = cameraBtn.frame.height/2
+              
+        
+        //Album Button
+        albumBtn.backgroundColor = .black
+        albumBtn.setTitle("Import", for: .normal)
+        albumBtn.addTarget(self, action: #selector(AccessPhoto), for: .touchDown)
+        albumBtn.titleLabel?.textColor = .white
+        albumBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        albumBtn.titleLabel?.textAlignment = .center
+        albumBtn.frame = CGRect(x: cameraBtn.frame.width+20.0, y: 0 ,width: width/2-20, height: height/16)
+        albumBtn.layer.cornerRadius = albumBtn.frame.height/2
+        
+        //signout
+        signOut.setTitle("sign out", for: .normal)
+        signOut.frame = CGRect(x: 270, y: 0, width: 60, height: 35)
+        signOut.addTarget(self, action: #selector(signout), for: .touchDown)
+        signOut.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        signOut.setTitleColor(UIColor.black, for: .normal)
+
+
+        
+        
+        //Add SubView
+        view.addSubview(stackView)
+        stackView.addSubview(label1)
+        stackView.addSubview(label2)
+        stackView.addSubview(image)
+        stackView.addSubview(label3)
+        stackView.addSubview(stackView2)
+        stackView2.addSubview(cameraBtn)
+        stackView2.addSubview(albumBtn)
+        stackView.addSubview(signOut)
     }
-
-}
-
-
-
-extension TodaysPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     
     @objc func OpenCamera() {
-        let vc = UIImagePickerController()
-        vc.sourceType = .camera
-        vc.allowsEditing = true
-        vc.delegate = self
-        present(vc, animated: true)
-        
-//        let picker = UIImagePickerController()
-//        picker.allowsEditing = true
-//        picker.delegate = self
-//        present(picker, animated: true)
-//
-//        print("Camera Opend..")
-    }
+            let cameraView = UIImagePickerController()
+            cameraView.delegate = self
+            cameraView.sourceType = .camera
+            self.present(cameraView, animated: true, completion: nil)
 
+            print("Camera Opend..")
+        }
     
+        
+        @objc func AccessPhoto() {
+            let picker = UIImagePickerController()
+            picker.allowsEditing = true
+            picker.delegate = self
+            present(picker, animated: true)
+        }
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
+//        guard let image = info[.editedImage] as? UIImage else { return }
 
-        let imageName = UUID().uuidString
-        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-
-        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-            try? jpegData.write(to: imagePath)
+        let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.image.image = pickedImage
+        self.label2.text = "This is my best moment ever!"
+        label3.text = "To replace this moment .. click here"
+        picker.dismiss(animated: true, completion: nil)
+        
+//        let imageName = UUID().uuidString
+//        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
+//
+//        if let jpegData = image.jpegData(compressionQuality: 0.8) {
+//            try? jpegData.write(to: imagePath)
         }
         
-        let singleMemoryItem = SingleMemoryItem(image: image, desc: "")
-        vc.arrOfItems.append(singleMemoryItem)
-        
-        dismiss(animated: true)
-    }
+//        let singleMemoryItem = SingleMemoryItem(image: image, desc: "")
+//        vc.arrOfItems.append(singleMemoryItem)
+//
+//        dismiss(animated: true)
+//    }
 
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
+//    func getDocumentsDirectory() -> URL {
+//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        return paths[0]
+//    }
+    @objc func signout() {
+        let vc = LoginVC()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+        
     }
     
 }
