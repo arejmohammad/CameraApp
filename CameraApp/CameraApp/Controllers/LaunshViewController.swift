@@ -27,7 +27,7 @@ class LaunshViewController: UIViewController {
         animationView.center = view.center
         view.addSubview(animationView)
         animationView.play()
-        animationView.loopMode = .playOnce
+        animationView.loopMode = .loop
         animationView.animationSpeed = 1
     }
 
