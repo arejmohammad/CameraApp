@@ -18,11 +18,11 @@ https://user-images.githubusercontent.com/92252764/144732751-63e1d759-f013-415c-
 
 ## Capture Moments
 You have two ways to add a moment, by Camera or by importing from Photos.
-
-Take moment using Camera
+ 
+Take moment using Camera 
 ![camera](https://user-images.githubusercontent.com/92252764/144734057-7c94eb86-d748-4d1d-8857-f2b074ffaba3.jpeg)
 
-Or import moment from Photos
+Or import moment from Photos 
 ![import](https://user-images.githubusercontent.com/92252764/144734058-61c982c2-3ddf-4bbf-9d7a-2ee6b114dac6.jpeg)
 
 
