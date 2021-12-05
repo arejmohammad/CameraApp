@@ -4,25 +4,26 @@ Those special and magical Moments in your life's story.. don't miss it,capture i
 # For:
 [LolaHadi](https://github.com/LolaHadi) - [ArejMohammad](https://github.com/arejmohammad)
 
-# What we're talking about?
 
+# What we're talking about?
 Moments App allows you to capture, and save your special life's Moments! The Moments that means to you.
 
-# Let's Dive into it, and see how it works..
 
+# Let's Dive into it, and see how it works..
 Moments is developed by Swift 5.x and xCode 13.0, programmatically with code only without using Storyboard or drag and drop..
 
 ## Signup and Login
 https://user-images.githubusercontent.com/92252764/144732751-63e1d759-f013-415c-837b-f46ceb68052f.mov
 
-
 ## Capture Moments
 You have two ways to add a moment, by Camera or by importing from Photos.
  
-Take moment using Camera 
+Take moment using Camera
+
 ![camera](https://user-images.githubusercontent.com/92252764/144734057-7c94eb86-d748-4d1d-8857-f2b074ffaba3.jpeg)
 
-Or import moment from Photos 
+Or import moment from Photos
+
 ![import](https://user-images.githubusercontent.com/92252764/144734058-61c982c2-3ddf-4bbf-9d7a-2ee6b114dac6.jpeg)
 
 
@@ -33,6 +34,7 @@ We have used `UIViewStack` on the construction and design of the entire applicat
 
 ## View.frame.width and height
 We've used the ready calculated width and height of the screen rather than using fixed numbers, which makes the design more flexible with different screens.
+
 `let width = view.frame.width`
 `let height = view.frame.height`
 
@@ -56,3 +58,5 @@ If we had more time, we would do the following:
 - Add more options on user moments such as: add description text, place, and time. And allow users to share moments on social media.
 - working with core data instead of userdefaults and fixing the slow in the app.
 - Change the name of the application from CameraApp to Moments.
+
+
