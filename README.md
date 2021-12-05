@@ -18,17 +18,21 @@ https://user-images.githubusercontent.com/92252764/144732751-63e1d759-f013-415c-
 
 ## Capture Moments
 You have two ways to add a moment, by Camera or by importing from Photos.
-Take moment using Camera![camera](https://user-images.githubusercontent.com/92252764/144734057-7c94eb86-d748-4d1d-8857-f2b074ffaba3.jpeg)
 
-Import moment from Photos![import](https://user-images.githubusercontent.com/92252764/144734058-61c982c2-3ddf-4bbf-9d7a-2ee6b114dac6.jpeg)
+Take moment using Camera
+![camera](https://user-images.githubusercontent.com/92252764/144734057-7c94eb86-d748-4d1d-8857-f2b074ffaba3.jpeg)
+
+Or import moment from Photos
+![import](https://user-images.githubusercontent.com/92252764/144734058-61c982c2-3ddf-4bbf-9d7a-2ee6b114dac6.jpeg)
 
 
 # Design
 ## UIViewStack
 We have used `UIViewStack` on the construction and design of the entire application, which makes each element takes its rightful place.
-`UIStackViews` can dynamically adapt to the screen size, and any changes in the available space. `UIStackViews` manages the layout of all the views in its arrangedSubviews property. These views are arranged along the stack view’s axis. We have used both `.Verticall` and .`Horizintal` The exact layout varies depending on the stack view’s axis, distribution, alignment, spacing, and other properties.
+`UIStackViews` can dynamically adapt to the screen size, and any changes in the available space. `UIStackViews` manages the layout of all the views in its arrangedSubviews property. These views are arranged along the stack view’s axis. We have used both `.Verticall` and .`Horizintal`.
 
 ## View.frame.width and height
+We've used the ready calculated width and height of the screen rather than using fixed numbers, which makes the design more flexible with different screens.
 `let width = view.frame.width`
 `let height = view.frame.height`
 
