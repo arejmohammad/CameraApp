@@ -13,7 +13,7 @@ Moments App allows you to capture, and save your special life's Moments! The Mom
 Moments is developed by Swift 5.x and xCode 13.0, programmatically with code only without using Storyboard or drag and drop..
 
 ## Signup and Login
-https://user-images.githubusercontent.com/92252764/144732751-63e1d759-f013-415c-837b-f46ceb68052f.mov
+https://user-images.githubusercontent.com/92252764/144735320-942ae6d9-dab6-4bc7-b046-308d04e6e715.mov
 
 ## Capture Moments
 You have two ways to add a moment, by Camera or by importing from Photos.
@@ -58,5 +58,6 @@ If we had more time, we would do the following:
 - Add more options on user moments such as: add description text, place, and time. And allow users to share moments on social media.
 - working with core data instead of userdefaults and fixing the slow in the app.
 - Change the name of the application from CameraApp to Moments.
+
 
 
