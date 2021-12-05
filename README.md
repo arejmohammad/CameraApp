@@ -58,6 +58,7 @@ If we had more time, we would do the following:
 - Add more options on user moments such as: add description text, place, and time. And allow users to share moments on social media.
 - working with core data instead of userdefaults and fixing the slow in the app.
 - Change the name of the application from CameraApp to Moments.
+- Because privacy is important, we need to add alert ask user to access Camera and Photo library.
 
 
 
