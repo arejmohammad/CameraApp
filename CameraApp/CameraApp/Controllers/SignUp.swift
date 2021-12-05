@@ -1,9 +1,6 @@
 
 import UIKit
 
-
-//let defaults = UserDefaults.standard
-
 class SignUp: UIViewController {
     
     let stackView = UIStackView()
@@ -47,7 +44,7 @@ class SignUp: UIViewController {
         
         
         //Title
-        titleL.text = "New SignUp"
+        titleL.text = "New Signup"
         titleL.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
         incrementYPoint += titleL.frame.height
         incrementYPoint += 100
@@ -155,7 +152,6 @@ class SignUp: UIViewController {
         stackView.addSubview(stackView2)
         stackView2.addSubview(SignUpBtn)
         stackView2.addSubview(CancelBtn)
-        
         
     }
     

@@ -13,13 +13,11 @@
 		822953752758DB680015AC8C /* CameraApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 822953732758DB680015AC8C /* CameraApp.xcdatamodeld */; };
 		822953772758DB690015AC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822953762758DB690015AC8C /* Assets.xcassets */; };
 		822953842758E5FB0015AC8C /* TodaysPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822953832758E5FB0015AC8C /* TodaysPhotoVC.swift */; };
-		822953862758E6330015AC8C /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822953852758E6330015AC8C /* CameraVC.swift */; };
 		822953882758E65C0015AC8C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822953872758E65C0015AC8C /* LoginVC.swift */; };
 		82A581F02759290900E7BE36 /* camanim.json in Resources */ = {isa = PBXBuildFile; fileRef = 82A581EF2759290900E7BE36 /* camanim.json */; };
 		82A581F82759377F00E7BE36 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 82A581F72759377F00E7BE36 /* Lottie */; };
 		82A581FA275956D000E7BE36 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A581F9275956D000E7BE36 /* SignUp.swift */; };
 		82A581FC2759587A00E7BE36 /* camera.json in Resources */ = {isa = PBXBuildFile; fileRef = 82A581FB2759587A00E7BE36 /* camera.json */; };
-		82A581FE275A700200E7BE36 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A581FD275A700200E7BE36 /* MyCollectionViewController.swift */; };
 		82A58201275A70C900E7BE36 /* SingleMemoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A58200275A70C900E7BE36 /* SingleMemoryItem.swift */; };
 		82A58203275A712300E7BE36 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A58202275A712300E7BE36 /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -33,13 +31,11 @@
 		822953762758DB690015AC8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8229537B2758DB690015AC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		822953832758E5FB0015AC8C /* TodaysPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysPhotoVC.swift; sourceTree = "<group>"; };
-		822953852758E6330015AC8C /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		822953872758E65C0015AC8C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		82A581EF2759290900E7BE36 /* camanim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camanim.json; sourceTree = "<group>"; };
 		82A581F42759305F00E7BE36 /* lottie-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "lottie-ios"; path = "../../../../Desktop/repo/lottie-ios"; sourceTree = "<group>"; };
 		82A581F9275956D000E7BE36 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		82A581FB2759587A00E7BE36 /* camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = camera.json; sourceTree = "<group>"; };
-		82A581FD275A700200E7BE36 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyCollectionViewController.swift; path = CameraApp/Controllers/MyCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		82A58200275A70C900E7BE36 /* SingleMemoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMemoryItem.swift; sourceTree = "<group>"; };
 		82A58202275A712300E7BE36 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +89,6 @@
 				822953872758E65C0015AC8C /* LoginVC.swift */,
 				82A581F9275956D000E7BE36 /* SignUp.swift */,
 				822953832758E5FB0015AC8C /* TodaysPhotoVC.swift */,
-				82A581FD275A700200E7BE36 /* MyCollectionViewController.swift */,
-				822953852758E6330015AC8C /* CameraVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,11 +201,9 @@
 			files = (
 				82A58203275A712300E7BE36 /* MyCollectionViewCell.swift in Sources */,
 				822953752758DB680015AC8C /* CameraApp.xcdatamodeld in Sources */,
-				822953862758E6330015AC8C /* CameraVC.swift in Sources */,
 				822953882758E65C0015AC8C /* LoginVC.swift in Sources */,
 				8229536F2758DB680015AC8C /* LaunshViewController.swift in Sources */,
 				8229536B2758DB680015AC8C /* AppDelegate.swift in Sources */,
-				82A581FE275A700200E7BE36 /* MyCollectionViewController.swift in Sources */,
 				82A581FA275956D000E7BE36 /* SignUp.swift in Sources */,
 				82A58201275A70C900E7BE36 /* SingleMemoryItem.swift in Sources */,
 				822953842758E5FB0015AC8C /* TodaysPhotoVC.swift in Sources */,

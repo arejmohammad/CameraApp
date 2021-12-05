@@ -16,7 +16,7 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     
     //if CollectionView not empty and  has items in it.
-    let vc = MyCollectionViewController()
+//    let vc = MyCollectionViewController()
     let image = UIImageView() //img
     let desc = UILabel() //caption
     
@@ -34,8 +34,15 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         stackView.frame = CGRect(x: 30, y: 80, width: width, height: height)
         stackView.axis = .vertical
         
+        //signout
+        signOut.setTitle("Signout", for: .normal)
+        signOut.frame = CGRect(x: 270, y: 0, width: width/5, height: height/20)
+        incrementYPoint += signOut.frame.height
+        signOut.addTarget(self, action: #selector(signout), for: .touchDown)
+        signOut.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        signOut.setTitleColor(UIColor.black, for: .normal)
+        
         //Label1
-//        label1.text = "Hello \(String(describing: name.text))"
         label1.text = "Hello"
         label1.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
         incrementYPoint += label1.frame.height
@@ -44,7 +51,7 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         
         //Label2
-        label2.text = "No Moments yet :'(, click on the button below to start"
+        label2.text = "No Moments yet, click on the button below to start"
         label2.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
         incrementYPoint += label2.frame.height
         label2.font = UIFont.systemFont(ofSize: 16)
@@ -53,7 +60,7 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         
         //ImageView
-        image.image = UIImage(named: "empty")
+        image.image = UIImage(named: "placeholder2")
         image.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height-height/2.5)
         incrementYPoint += image.frame.height
         incrementYPoint += 30
@@ -93,18 +100,10 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         albumBtn.frame = CGRect(x: cameraBtn.frame.width+20.0, y: 0 ,width: width/2-20, height: height/16)
         albumBtn.layer.cornerRadius = albumBtn.frame.height/2
         
-        //signout
-        signOut.setTitle("sign out", for: .normal)
-        signOut.frame = CGRect(x: 270, y: 0, width: 60, height: 35)
-        signOut.addTarget(self, action: #selector(signout), for: .touchDown)
-        signOut.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        signOut.setTitleColor(UIColor.black, for: .normal)
-
-
-        
         
         //Add SubView
         view.addSubview(stackView)
+        stackView.addSubview(signOut)
         stackView.addSubview(label1)
         stackView.addSubview(label2)
         stackView.addSubview(image)
@@ -112,7 +111,6 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         stackView.addSubview(stackView2)
         stackView2.addSubview(cameraBtn)
         stackView2.addSubview(albumBtn)
-        stackView.addSubview(signOut)
     }
     
     @objc func OpenCamera() {
@@ -140,24 +138,8 @@ class TodaysPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.label2.text = "This is my best moment ever!"
         label3.text = "To replace this moment .. click here"
         picker.dismiss(animated: true, completion: nil)
+    }
         
-//        let imageName = UUID().uuidString
-//        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-//
-//        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-//            try? jpegData.write(to: imagePath)
-        }
-        
-//        let singleMemoryItem = SingleMemoryItem(image: image, desc: "")
-//        vc.arrOfItems.append(singleMemoryItem)
-//
-//        dismiss(animated: true)
-//    }
-
-//    func getDocumentsDirectory() -> URL {
-//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        return paths[0]
-//    }
     @objc func signout() {
         let vc = LoginVC()
         vc.modalPresentationStyle = .fullScreen

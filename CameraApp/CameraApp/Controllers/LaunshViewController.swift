@@ -1,26 +1,33 @@
-
 import UIKit
 import Lottie
 
 class LaunshViewController: UIViewController {
     
-    let start = UIButton (frame: CGRect(x: 70, y: 620, width: 250, height: 40))
+    let startBtn = UIButton ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        let width = view.frame.width-60
+        let height = view.frame.height-200
+        
         configureAnimation()
         
-        start.setTitle("Start", for: .normal)
-        start.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        start.layer.cornerRadius = start.frame.height/2
-        start.addTarget(self, action: #selector (Start) , for: .touchDown)
-        view.addSubview(start)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.authenticateUser), name: UIApplication.didFinishLaunchingNotification, object: nil)
+        
+        
+        view.addSubview(startBtn)
+        startBtn.backgroundColor = .black
+        startBtn.setTitle("Start", for: .normal)
+        startBtn.addTarget(self, action: #selector(Start), for: .touchDown)
+        startBtn.titleLabel?.textColor = .white
+        startBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        startBtn.titleLabel?.textAlignment = .center
+        startBtn.frame = CGRect(x: width-width/1.3, y: height-height/30,width: width-width/4, height: height/18)
+        startBtn.layer.cornerRadius = startBtn.frame.height/2
     }
     
-    func configureAnimation(){
+    func configureAnimation() {
         let animation = Animation.named("camera")
         let animationView = AnimationView(animation:animation)
         animationView.contentMode = .scaleAspectFill
@@ -31,17 +38,15 @@ class LaunshViewController: UIViewController {
         animationView.loopMode = .playOnce
         animationView.animationSpeed = 1
     }
+   
 
-   @objc func Start(){
+   @objc func Start() {
         let vc = LoginVC()
        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        present(vc, animated: true, completion: nil)
     }
-    @objc func authenticateUser() {
-//        (UIApplication.shared.delegate as! LoginVC)
-        let vc = LoginVC()
-       vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-    }
+    
+    
 }
+
 

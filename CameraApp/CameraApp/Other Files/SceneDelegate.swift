@@ -19,6 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = LaunshViewController()
         window.makeKeyAndVisible()
         self.window = window
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+//            self.window?.rootViewController = LoginVC()
+        }
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -53,5 +58,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 

@@ -23,6 +23,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
         let width = view.frame.width-60
@@ -95,7 +96,7 @@ class LoginVC: UIViewController {
         loginBtn.titleLabel?.textColor = .white
         loginBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         loginBtn.titleLabel?.textAlignment = .center
-        loginBtn.frame = CGRect(x: 10, y: incrementYPoint ,width: width-20, height: height/20)
+        loginBtn.frame = CGRect(x: 10, y: incrementYPoint ,width: width-20, height: height/18)
         incrementYPoint += loginBtn.frame.height
         incrementYPoint += 20
         loginBtn.layer.cornerRadius = loginBtn.frame.height/2
@@ -108,19 +109,17 @@ class LoginVC: UIViewController {
         
         //SignUpL
         signUpL.text = "Don't have an account?"
-        signUpL.frame = CGRect(x: 0, y: 0, width: width-width/2, height: stackView2.frame.height)
+        signUpL.frame = CGRect(x: 0, y: 0, width: width-width/2.5, height: stackView2.frame.height)
         signUpL.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         signUpL.font = .systemFont(ofSize: 14)
         signUpL.textAlignment = .right
         
         
         //SignUpBtn
-        signUpBtn.setTitle("SignUp for Free", for: .normal)
+        signUpBtn.setTitle("Signup for Free", for: .normal)
         signUpBtn.addTarget(self, action: #selector(SignUpBtnTapped), for: .touchDown)
-        signUpBtn.frame = CGRect(x: signUpL.frame.width+10.0, y: 0, width: width-signUpL.frame.width-20, height: stackView2.frame.height)
-//        signUpBtn.titleLabel?.textColor = .black
-//        signUpBtn.tintColor = .black
-        signUpBtn.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        signUpBtn.frame = CGRect(x: signUpL.frame.width, y: 0, width: width-signUpL.frame.width-20, height: stackView2.frame.height)
+        signUpBtn.titleLabel?.font = .boldSystemFont(ofSize: 14)
         signUpBtn.titleLabel?.textAlignment = .left
         signUpBtn.setTitleColor(UIColor.black, for: .normal)
 
