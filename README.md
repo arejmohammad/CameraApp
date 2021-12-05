@@ -43,7 +43,7 @@ width is normally fixed in the screen starts from 0 and ending in screen.width, 
 we implement a y point which increments by element height each time. and the next element starts from it. We can control the spacing between elements by adding the spacing value to the y point. 
 
 `var incrementYPoint = 0.0
-let titleL = UILabel()
+let titleL = UILabel()`
 
 titleL.frame = CGRect(x: 0, y: incrementYPoint, width: width, height: height/10)
 incrementYPoint += titleL.frame.height
